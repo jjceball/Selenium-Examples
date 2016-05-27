@@ -30,11 +30,11 @@ public class setup
 		
 		driver.navigate().to("https://www.google.com");
         
-        // Wait for the website to load
-        Thread.sleep(2000);
+        	// Wait for the website to load
+        	Thread.sleep(2000);
         
-        //Close the browser
-        driver.close();
-        driver.quit();
+        	//Close the browser
+        	driver.close();
+        	driver.quit();
 	}
 }
