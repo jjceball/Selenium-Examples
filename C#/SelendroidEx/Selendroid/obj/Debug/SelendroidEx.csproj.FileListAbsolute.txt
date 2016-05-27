@@ -1,0 +1,11 @@
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\Selendroid.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\Selendroid.pdb
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\nunit.framework.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\WebDriver.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\WebDriver.Support.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\nunit.framework.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\WebDriver.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\bin\Debug\WebDriver.Support.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\obj\Debug\Selendroid.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\obj\Debug\Selendroid.pdb
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SelendroidEx\Selendroid\obj\Debug\SelendroidEx.csprojResolveAssemblyReference.cache

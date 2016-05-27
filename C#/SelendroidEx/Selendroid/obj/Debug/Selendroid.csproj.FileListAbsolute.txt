@@ -1,0 +1,10 @@
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\Selendroid.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\Selendroid.pdb
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\nunit.framework.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\WebDriver.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\WebDriver.Support.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\nunit.framework.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\WebDriver.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\bin\Debug\WebDriver.Support.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\obj\Debug\Selendroid.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\Selendroid\Selendroid\obj\Debug\Selendroid.pdb

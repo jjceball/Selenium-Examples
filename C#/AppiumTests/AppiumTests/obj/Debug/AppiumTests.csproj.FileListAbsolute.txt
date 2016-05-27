@@ -1,0 +1,16 @@
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\AppiumTests.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\AppiumTests.pdb
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\appium-dotnet-driver.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\Castle.Core.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\Newtonsoft.Json.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\nunit.framework.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\WebDriver.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\WebDriver.Support.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\appium-dotnet-driver.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\Castle.Core.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\Newtonsoft.Json.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\nunit.framework.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\WebDriver.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\WebDriver.Support.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\obj\Debug\AppiumTests.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\obj\Debug\AppiumTests.pdb

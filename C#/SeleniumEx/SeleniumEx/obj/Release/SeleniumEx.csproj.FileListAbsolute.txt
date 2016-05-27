@@ -1,0 +1,10 @@
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\SeleniumEx.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\SeleniumEx.pdb
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\nunit.framework.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\WebDriver.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\WebDriver.Support.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\nunit.framework.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\WebDriver.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Release\WebDriver.Support.xml
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\obj\Release\SeleniumEx.dll
+c:\users\jceballos\documents\visual studio 2013\Projects\SeleniumEx\SeleniumEx\obj\Release\SeleniumEx.pdb

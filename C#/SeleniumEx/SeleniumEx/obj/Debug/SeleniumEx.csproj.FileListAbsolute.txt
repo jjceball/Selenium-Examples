@@ -1,0 +1,16 @@
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\SeleniumEx.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\SeleniumEx.pdb
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\nunit.framework.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\ThoughtWorks.Selenium.Core.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\WebDriver.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\WebDriver.Support.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\nunit.framework.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\Selenium.WebDriverBackedSelenium.pdb
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\Selenium.WebDriverBackedSelenium.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\ThoughtWorks.Selenium.Core.pdb
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\ThoughtWorks.Selenium.Core.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\WebDriver.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\bin\Debug\WebDriver.Support.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\obj\Debug\SeleniumEx.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumEx\SeleniumEx\obj\Debug\SeleniumEx.pdb

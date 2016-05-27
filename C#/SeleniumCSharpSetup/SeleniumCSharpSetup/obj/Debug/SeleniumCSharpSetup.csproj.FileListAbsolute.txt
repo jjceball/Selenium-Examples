@@ -1,0 +1,8 @@
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\bin\Debug\SeleniumCSharpSetup.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\bin\Debug\SeleniumCSharpSetup.pdb
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\bin\Debug\WebDriver.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\bin\Debug\WebDriver.Support.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\bin\Debug\WebDriver.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\bin\Debug\WebDriver.Support.xml
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\obj\Debug\SeleniumCSharpSetup.dll
+C:\Users\jceballos\Documents\Visual Studio 2013\Projects\SeleniumCSharpSetup\SeleniumCSharpSetup\obj\Debug\SeleniumCSharpSetup.pdb
