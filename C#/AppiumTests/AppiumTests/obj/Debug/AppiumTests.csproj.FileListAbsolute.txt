@@ -14,3 +14,19 @@ c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests
 c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\bin\Debug\WebDriver.Support.xml
 c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\obj\Debug\AppiumTests.dll
 c:\users\jceballos\documents\visual studio 2013\Projects\AppiumTests\AppiumTests\obj\Debug\AppiumTests.pdb
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\AppiumTests.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\AppiumTests.pdb
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\appium-dotnet-driver.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\Castle.Core.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\nunit.framework.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\WebDriver.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\WebDriver.Support.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\appium-dotnet-driver.xml
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\Castle.Core.xml
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\nunit.framework.xml
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\WebDriver.xml
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\bin\Debug\WebDriver.Support.xml
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\obj\Debug\AppiumTests.dll
+C:\Users\jceballos\Documents\GitHub\Selenium-Examples\C#\AppiumTests\AppiumTests\obj\Debug\AppiumTests.pdb
