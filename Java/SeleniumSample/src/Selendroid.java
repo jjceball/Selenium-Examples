@@ -46,14 +46,20 @@ public class Selendroid
 	public void StringTest() 
 	{
 		// Enter Test String and submit
+<<<<<<< HEAD
         search.sendKeys("Testing Selenium!");
         search.submit();	
+=======
+        	search.sendKeys("Testing Selenium!");
+        	search.submit();	
+>>>>>>> origin/master
 	}
 	
 	@Test
 	public void Twitter() throws InterruptedException
 	{
 		// Enter Twitter String and submit
+<<<<<<< HEAD
         search.sendKeys("Twitter");
         search.submit();
 
@@ -139,6 +145,93 @@ public class Selendroid
         File dmsscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	search.sendKeys("Twitter");
+        	search.submit();
+
+        	// Twitter link 
+        	WebElement twitter = driver.findElement(By.linkText("Log in"));
+        	twitter.click();
+
+        	// Enter email field
+		WebElement email = driver.findElement(By.name("session[username_or_email]"));
+        	email.sendKeys("seleniumtesterjay@gmail.com");
+
+        	// Enter password field
+        	WebElement pass = driver.findElement(By.name("session[password]"));
+        	pass.sendKeys("SeleniumTester24");
+
+        	// Submit login
+        	WebElement login = driver.findElement(By.id("signupbutton"));
+        	login.submit();
+        
+        	// Select Icon
+        	WebElement icon = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[5]/a"));
+        	icon.click();
+        
+        	// Select profile 
+        	WebElement profile = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/a[1]"));
+        	profile.click();
+
+        	Thread.sleep(2000);
+
+        	// Following 
+        	WebElement following = driver.findElement(By.cssSelector("._1A98klV2, ._3OpVsglB, ._2mYajcSS"));
+        	following.click();
+        	Thread.sleep(1000);
+
+        	// NFL
+        	WebElement nfl = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div[2]/div/div[2]/div/div/section/div/div/div/div/div/div[2]/div/div/div/div[2]/div/a"));
+        	nfl.click();
+        	Thread.sleep(1500);
+        	File nflprofile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+			FileUtils.copyFile(nflprofile, new File("C:/Users/jceballos/Documents/Screenshots/Java/1_Twitter1.jpg"));
+		} 
+        	catch (IOException e1) 
+	 	{
+			e1.printStackTrace();
+		}
+
+        	// Back home 
+        	WebElement globalhome = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[1]/a"));
+        	globalhome.click();
+
+        	Thread.sleep(1000);
+        
+        	// Back to Icon
+        	icon = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[5]/a"));
+        	icon.click();
+
+        	// Select profile 
+        	profile = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/a[1]"));
+        	profile.click();
+
+        	Thread.sleep(1000);
+
+        	// Notifications 
+        	WebElement notifications = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[2]/a"));
+        	notifications.click();
+        	Thread.sleep(1000);
+        	File notificationsscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+			FileUtils.copyFile(notificationsscreen, new File("C:/Users/jceballos/Documents/Screenshots/1_Twitter2.jpg"));
+		} 
+        	catch (IOException e1) 
+        	{
+			e1.printStackTrace();
+		}
+
+        	// DMs 
+        	WebElement dms = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[3]/a"));
+        	dms.click();
+        	Thread.sleep(2000);
+        	File dmsscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(dmsscreen, new File("C:/Users/jceballos/Documents/Screenshots/1_Twitter3.jpg"));
 		} 
         catch (IOException e1) 
@@ -146,6 +239,7 @@ public class Selendroid
 			e1.printStackTrace();
 		}
 
+<<<<<<< HEAD
         // Search for Lakers
         WebElement searchicon = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[4]/a"));
         searchicon.click();
@@ -156,6 +250,18 @@ public class Selendroid
         File lakersscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	// Search for Lakers
+        	WebElement searchicon = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[4]/a"));
+        	searchicon.click();
+        	WebElement searchbar = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/form/div/div/div[1]/input"));
+        	searchbar.sendKeys("Lakers");
+        	searchbar.submit();
+        	Thread.sleep(1000);
+        	File lakersscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(lakersscreen, new File("C:/Users/jceballos/Documents/Screenshots/2_Twitter5.jpg"));
 		} 
         catch (IOException e1) 
@@ -163,6 +269,7 @@ public class Selendroid
 			e1.printStackTrace();
 		}
 
+<<<<<<< HEAD
         // Back home
         globalhome = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[1]/a"));
         globalhome.click();
@@ -181,6 +288,26 @@ public class Selendroid
         subTweet.click();
 
         Thread.sleep(2000);
+=======
+        	// Back home
+        	globalhome = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[1]/a"));
+        	globalhome.click();
+        	Thread.sleep(1000);
+
+        	// Find tweet
+        	WebElement newTweet = driver.findElement(By.className("_21klZNE9"));
+        	newTweet.click();
+
+        	// Enter tweet
+        	WebElement tweet = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/div[3]/div[2]/div/span/textarea"));
+        	tweet.sendKeys("This is automation writing this tweet!");
+
+        	// Submit tweet 
+        	WebElement subTweet = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/div[2]/div/div[3]/div/button"));
+        	subTweet.click();
+
+        	Thread.sleep(2000);
+>>>>>>> origin/master
 
         // Take File
         File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -195,6 +322,7 @@ public class Selendroid
 
         Thread.sleep(1000);
 
+<<<<<<< HEAD
         // Options 
         WebElement options = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[5]/a"));
         options.click();
@@ -202,12 +330,22 @@ public class Selendroid
         // Logout
         WebElement logout = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/a[6]"));
         logout.click();
+=======
+        	// Options 
+        	WebElement options = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/header/div/div/nav/div/div/div[5]/a"));
+        	options.click();
+
+        	// Logout
+        	WebElement logout = driver.findElement(By.xpath("//*[@id='react-root']/div[1]/div/div/main/div/a[6]"));
+        	logout.click();
+>>>>>>> origin/master
 	}
 	
 	@Test
 	public void Instagram() throws InterruptedException
 	{
 		// Find Instagram link and submit
+<<<<<<< HEAD
         search.sendKeys("Instagram");
         search.submit();
 
@@ -256,6 +394,56 @@ public class Selendroid
         File explorescreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	search.sendKeys("Instagram");
+        	search.submit();
+
+        	// Link text
+        	WebElement linkText = driver.findElement(By.linkText("Instagram"));
+        	linkText.click();
+        	Thread.sleep(1000);
+
+        	// ExampleSignup
+        	WebElement email = driver.findElement(By.name("email"));
+        	email.sendKeys("seleniumtesterjay@gmail.com");
+        	WebElement fullname = driver.findElement(By.name("fullName"));
+        	fullname.sendKeys("Selenium Tester");
+        	WebElement username = driver.findElement(By.name("username"));
+        	username.sendKeys("automatedseleniumtester");
+        	WebElement password = driver.findElement(By.name("password"));
+	        password.sendKeys("SeleniumTester24");
+        	Thread.sleep(500);
+
+        	// Login Button
+        	WebElement login1 = driver.findElement(By.className("_k6cv7"));
+        	login1.click();
+
+        	// Username field
+        	username = driver.findElement(By.name("username"));
+        	username.sendKeys("seleniumtesterjay");
+
+        	// Password field
+        	password = driver.findElement(By.name("password"));
+        	password.sendKeys("SeleniumTester24");
+
+        	// Second login button
+        	WebElement login2 = driver.findElement(By.className("_rz1lq"));
+        	login2.click();
+
+        	Thread.sleep(1000);
+
+        	// First Like button 
+        	WebElement like = driver.findElement(By.cssSelector("._ebwb5,._1tv0k"));
+        	like.click();
+
+        	// Explore 
+        	WebElement explore = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[2]/a"));
+        	explore.click();
+        	Thread.sleep(1000);
+        	File explorescreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(explorescreen, new File("C:/Users/jceballos/Documents/Screenshots/2_Instagram1.jpg"));
 		} 
         catch (IOException e4) 
@@ -263,6 +451,7 @@ public class Selendroid
 			e4.printStackTrace();
 		}
 
+<<<<<<< HEAD
         // Notifications 
         WebElement notifications = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div/div/div[3]/a"));
         notifications.click(); // Open
@@ -279,6 +468,24 @@ public class Selendroid
         File AOA = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	// Notifications 
+        	WebElement notifications = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div/div/div[3]/a"));
+        	notifications.click(); // Open
+        	Thread.sleep(500);
+        	explore = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div/div/div[2]/a"));
+        	explore.click();
+
+        	// Search for #AOA
+        	WebElement searchbar = driver.findElement(By.xpath("//*[@id='react-root']/section/main/div/div/div/input"));
+        	searchbar.sendKeys("#AOA");
+        	Thread.sleep(500);
+        	searchbar.sendKeys(Keys.ENTER);
+        	Thread.sleep(3000);
+        	File AOA = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(AOA, new File("C:/Users/jceballos/Documents/Screenshots/2_Instagram2.jpg"));
 		} 
         catch (IOException e3) 
@@ -286,6 +493,7 @@ public class Selendroid
 			e3.printStackTrace();
 		}
 
+<<<<<<< HEAD
         // Profile                                     
         WebElement profile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[4]/a"));
         profile.click();
@@ -298,6 +506,20 @@ public class Selendroid
         File post = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	// Profile                                     
+        	WebElement profile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[4]/a"));
+        	profile.click();
+        	Thread.sleep(1000);
+
+        	// First post 
+        	WebElement firstpost = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/div/div[1]/div/a"));
+        	firstpost.click();
+        	Thread.sleep(1000);
+        	File post = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(post, new File("C:/Users/jceballos/Documents/Screenshots/2_Instagram3.jpg"));
 		} 
         catch (IOException e2) 
@@ -305,6 +527,7 @@ public class Selendroid
 			e2.printStackTrace();
 		}
         
+<<<<<<< HEAD
         driver.navigate().back(); // Go back to the Profile page.
 
         // Followers
@@ -328,13 +551,45 @@ public class Selendroid
         follow.click();
 
         Thread.sleep(1000);
+=======
+        	driver.navigate().back(); // Go back to the Profile page.
+
+	 	// Followers
+        	WebElement followers = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/ul/li[2]/a"));
+	        followers.click();
+        	Thread.sleep(500);
+        	driver.navigate().back();
+
+        	// Following
+        	WebElement following = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/ul/li[3]/a"));
+        	following.click();
+        	Thread.sleep(1000);
+
+        	// GFriend profile
+        	WebElement gfriend = driver.findElement(By.linkText("gfriendofficial"));
+        	gfriend.click();
+        	Thread.sleep(1000);
+
+        	// Unfollow                            
+	        WebElement follow = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/div[3]/span/button"));
+        	follow.click();
+
+        	Thread.sleep(1000);
+>>>>>>> origin/master
 
         Assert.assertEquals(true, driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[1]/img")).isDisplayed());
 
+<<<<<<< HEAD
         // Take File
         File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	// Take File
+        	File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(image, new File("C:/Users/jceballos/Documents/Screenshots/2_Instagram4.jpg"));
 		} 
         catch (IOException e1) 
@@ -345,6 +600,7 @@ public class Selendroid
         // Follow 
         follow.click();
 
+<<<<<<< HEAD
         // Back to Profile (Need new element to avoid stale element exception)
         WebElement userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[4]/a"));
         userprofile.click();
@@ -371,6 +627,34 @@ public class Selendroid
         File seolscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try 
         {
+=======
+        	// Back to Profile (Need new element to avoid stale element exception)
+        	WebElement userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[4]/a"));
+        	userprofile.click();
+
+        	// Following
+        	following = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/ul/li[3]/a"));
+        	following.click();
+        	Thread.sleep(500);
+
+        	// Seolhyun profile
+        	WebElement seolhyun = driver.findElement(By.linkText("sh_9513"));
+        	seolhyun.click();
+        	Thread.sleep(1000);
+
+        	// Unfollow                          
+        	follow = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/div[3]/span/button"));
+        	follow.click();
+
+        	Thread.sleep(500); 
+
+        	Assert.assertEquals(true, driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[1]/img")).isDisplayed());
+
+        	// Take File
+        	File seolscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        	try 
+        	{
+>>>>>>> origin/master
 			FileUtils.copyFile(seolscreen, new File("C:/Users/jceballos/Documents/Screenshots/2_Instagram5.jpg"));
 		} 
         catch (IOException e) 
@@ -378,19 +662,34 @@ public class Selendroid
 			e.printStackTrace();
 		}
 
+<<<<<<< HEAD
         // Follow 
         follow.click();
         	
         // Back to Profile (Need new element to avoid stale element exception)
         userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[4]/a"));
         userprofile.click();
+=======
+        	// Follow 
+        	follow.click();
+        	
+        	// Back to Profile (Need new element to avoid stale element exception)
+        	userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div[2]/div[1]/div/div[4]/a"));
+        	userprofile.click();
+>>>>>>> origin/master
 
         // Three dots 
         WebElement threedots = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/button"));
         threedots.click();
 
+<<<<<<< HEAD
         // Logout
         WebElement logout = driver.findElement(By.xpath("/html/body/div[2]/div/div/ul/li[4]/button"));
         logout.click();
+=======
+        	// Logout
+        	WebElement logout = driver.findElement(By.xpath("/html/body/div[2]/div/div/ul/li[4]/button"));
+        	logout.click();
+>>>>>>> origin/master
 	}
 }
