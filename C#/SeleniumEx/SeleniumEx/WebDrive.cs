@@ -31,9 +31,6 @@ namespace SeleniumEx
             // Set implicit wait
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(15));
 
-            // Create WaitDriver
-            IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-
             // Navigate to Google for start
             driver.Navigate().GoToUrl("http://www.google.com/");
 
@@ -64,8 +61,8 @@ namespace SeleniumEx
             searchBar.SendKeys("Facebook");
             searchBar.Submit();
 
-            // Facebook link element
-            IWebElement facebook = driver.FindElement(By.XPath("//*[@id='rso']/div[1]/div/div/h3/a[1]"));
+            // Facebook link element 
+            IWebElement facebook = driver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div > div > h3 > a"));
             facebook.Click();
 
             // Enter email field
@@ -87,11 +84,11 @@ namespace SeleniumEx
             search.SendKeys("Nike");
             search.Submit();
 
-            Thread.Sleep(2000);
+            Thread.Sleep(2500);
 
             driver.Navigate().Refresh();
-
-            IWebElement pages = driver.FindElement(By.XPath("//*[@id='u_0_u']/div/div/div/ul/li[6]"));
+            
+            IWebElement pages = driver.FindElement(By.XPath("//*[@id='u_0_s']/div/div/div/ul/li[6]/a"));
             pages.Click();
 
             Thread.Sleep(1000);
@@ -103,11 +100,9 @@ namespace SeleniumEx
             // Sleep thread
             Thread.Sleep(2500);
 
-            Assert.AreEqual(true, driver.FindElement(By.XPath("//*[@id='fbPageFinchProfilePic']/a/img")).Displayed);
-
-            // Take profile screenshot
+            // Take Nike screenshot
             Screenshot screennike = ((ITakesScreenshot)driver).GetScreenshot();
-            screennike.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/1_Facebook1.jpg", ImageFormat.Jpeg);
+            screennike.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/1_Facebook1.jpg", ImageFormat.Jpeg);
 
             // Try Catch block for screenshot
             try
@@ -120,18 +115,13 @@ namespace SeleniumEx
 
                 // Take screenshot
                 Screenshot image = ((ITakesScreenshot)driver).GetScreenshot();
-                image.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/1_Facebook2.jpg", ImageFormat.Jpeg);
+                image.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/1_Facebook2.jpg", ImageFormat.Jpeg);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 Assert.Fail("Failed with Exception: " + e);
             }
-            
-            // Select dropdown menu
-            IWebElement drop = driver.FindElement(By.Id("userNavigationLabel"));
-            drop.Click(); // Open dropdown
-            drop.Click(); // Close dropdown
 
             // Back home 
             IWebElement home = driver.FindElement(By.XPath("//*[@id='blueBarDOMInspector']/div[1]/div/div/div/div[1]/div[1]/h1/a"));
@@ -139,12 +129,23 @@ namespace SeleniumEx
 
             Thread.Sleep(2500);
 
-            // Messages
+            // Messages 
             IWebElement messages = driver.FindElement(By.XPath("//*[@id='navItem_217974574879787']/a/div/span"));
             messages.Click();
             Thread.Sleep(1500);
             Screenshot messagescreen = ((ITakesScreenshot)driver).GetScreenshot();
-            messagescreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/1_Facebook3.jpg", ImageFormat.Jpeg);
+            messagescreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/1_Facebook3.jpg", ImageFormat.Jpeg);
+
+            // Select dropdown menu and logout 
+            IWebElement drop = driver.FindElement(By.Id("userNavigationLabel"));
+            drop.Click(); // Open dropdown
+            IWebElement logout = driver.FindElement(By.XPath("//*[@id='BLUE_BAR_ID_DO_NOT_USE']/div/div/div[1]/div/div/ul/li[12]/a/span/span"));
+            logout.Click();
+
+            // Screenshot Facebook homepage 
+            Thread.Sleep(1500);
+            Screenshot homescreen = ((ITakesScreenshot)driver).GetScreenshot();
+            homescreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/1_Facebook4.jpg", ImageFormat.Jpeg);
         }
 
         [TestMethod]
@@ -155,7 +156,7 @@ namespace SeleniumEx
             searchBar.Submit();
 
             // Twitter link 
-            IWebElement twitter = driver.FindElement(By.LinkText("Twitter"));
+            IWebElement twitter = driver.FindElement(By.CssSelector("#rso > div.g > div > div > h3 > a"));
             twitter.Click();
 
             // Login button
@@ -178,6 +179,8 @@ namespace SeleniumEx
             IWebElement login = driver.FindElement(By.ClassName("js-submit"));
             login.Submit();
 
+            Thread.Sleep(1000);
+
             // Select profile 
             IWebElement profile = driver.FindElement(By.XPath("//*[@id='page-container']/div[1]/div[1]/div/div[1]/div/a"));
             profile.Click();
@@ -193,7 +196,7 @@ namespace SeleniumEx
             nfl.Click();
             Thread.Sleep(2500);
             Screenshot nflprofile = ((ITakesScreenshot)driver).GetScreenshot();
-            nflprofile.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/2_Twitter1.jpg", ImageFormat.Jpeg);
+            nflprofile.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/2_Twitter1.jpg", ImageFormat.Jpeg);
 
             // Back home 
             IWebElement globalhome = driver.FindElement(By.Id("global-nav-home"));
@@ -217,21 +220,21 @@ namespace SeleniumEx
             moments.Click();
             Thread.Sleep(2000);
             Screenshot momentsscreen = ((ITakesScreenshot)driver).GetScreenshot();
-            momentsscreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/2_Twitter2.jpg", ImageFormat.Jpeg);
+            momentsscreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/2_Twitter2.jpg", ImageFormat.Jpeg);
 
             // Notifications 
             IWebElement notifications = driver.FindElement(By.ClassName("notifications"));
             notifications.Click();
             Thread.Sleep(2000);
             Screenshot notificationsscreen = ((ITakesScreenshot)driver).GetScreenshot();
-            notificationsscreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/2_Twitter3.jpg", ImageFormat.Jpeg);
+            notificationsscreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/2_Twitter3.jpg", ImageFormat.Jpeg);
 
             // DMs 
             IWebElement dms = driver.FindElement(By.ClassName("dm-nav"));
             dms.Click();
             Thread.Sleep(2000);
             Screenshot dmsscreen = ((ITakesScreenshot)driver).GetScreenshot();
-            dmsscreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/2_Twitter4.jpg", ImageFormat.Jpeg);
+            dmsscreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/2_Twitter4.jpg", ImageFormat.Jpeg);
             // Close DM
             IWebElement closedm = driver.FindElement(By.ClassName("DMActivity-close"));
             closedm.Click();
@@ -245,7 +248,7 @@ namespace SeleniumEx
             lakers.Click();
             Thread.Sleep(1000);
             Screenshot lakersscreen = ((ITakesScreenshot)driver).GetScreenshot();
-            lakersscreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/2_Twitter5.jpg", ImageFormat.Jpeg);
+            lakersscreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/2_Twitter5.jpg", ImageFormat.Jpeg);
 
             // Back home to profile
             globalhome = driver.FindElement(By.Id("global-nav-home"));
@@ -271,7 +274,7 @@ namespace SeleniumEx
 
             // Take screenshot
             Screenshot image = ((ITakesScreenshot)driver).GetScreenshot();
-            image.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/2_Twitter6.jpg", ImageFormat.Jpeg);
+            image.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/2_Twitter6.jpg", ImageFormat.Jpeg);
 
             Thread.Sleep(1000);
 
@@ -298,7 +301,7 @@ namespace SeleniumEx
             searchBar.Submit();
 
             // Link text
-            IWebElement linkText = driver.FindElement(By.LinkText("Instagram"));
+            IWebElement linkText = driver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div > h3 > a"));
             linkText.Click();
 
             // ExampleSignup
@@ -313,7 +316,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             // Login Button
-            IWebElement login1 = driver.FindElement(By.ClassName("_k6cv7"));
+            IWebElement login1 = driver.FindElement(By.ClassName("_fcn8k"));
             login1.Click();
 
             // Username field
@@ -328,51 +331,51 @@ namespace SeleniumEx
             IWebElement login2 = driver.FindElement(By.ClassName("_rz1lq"));
             login2.Click();
 
-            Thread.Sleep(2000);
+            Thread.Sleep(2500);
 
             // First Like button 
             IWebElement like = driver.FindElement(By.CssSelector("._ebwb5,._1tv0k"));
             like.Click();
 
             // Explore 
-            IWebElement explore = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[1]/a"));
+            IWebElement explore = driver.FindElement(By.CssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(1) > a"));
             explore.Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(1500);
             Screenshot explorescreen = ((ITakesScreenshot)driver).GetScreenshot();
-            explorescreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/3_Instagram1.jpg", ImageFormat.Jpeg);
+            explorescreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/3_Instagram1.jpg", ImageFormat.Jpeg);
 
             // Notifications 
-            IWebElement notifications = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[2]/a"));
+            IWebElement notifications = driver.FindElement(By.CssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(2) > a"));
             notifications.Click(); // Open
-            Thread.Sleep(2000);
-            notifications = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[2]/div/div/div[1]"));
+            Thread.Sleep(1000);
+            notifications = driver.FindElement(By.CssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(2) > div > div > div._4i862"));
             notifications.Click(); // Close
 
-            // Search for #AOA
-            IWebElement search = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[1]/input"));
+            // Search for #AOA 
+            IWebElement search = driver.FindElement(By.CssSelector("#react-root > section > nav > div > div > div > div > div._9pxkq._icv3j > input"));
             search.SendKeys("#AOA");
             Thread.Sleep(1000);
             search.SendKeys(Keys.Enter);
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
             Screenshot AOA = ((ITakesScreenshot)driver).GetScreenshot();
-            AOA.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/3_Instagram2.jpg", ImageFormat.Jpeg);
+            AOA.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/3_Instagram2.jpg", ImageFormat.Jpeg);
 
             // Profile                                     
-            IWebElement profile = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[3]/a"));
+            IWebElement profile = driver.FindElement(By.CssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(3) > a"));
             profile.Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
 
-            // First post 
-            IWebElement firstpost = driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/div/div[1]/div/a"));
+            // First post  
+            IWebElement firstpost = driver.FindElement(By.CssSelector("#react-root > section > main > article > div > div._nljxa > div > a"));
             firstpost.Click();
-            Thread.Sleep(3000);
+            Thread.Sleep(1500);
             Screenshot post = ((ITakesScreenshot)driver).GetScreenshot();
-            post.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/3_Instagram3.jpg", ImageFormat.Jpeg);
+            post.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/3_Instagram3.jpg", ImageFormat.Jpeg);
             IWebElement closepost = driver.FindElement(By.ClassName("_3eajp"));
             closepost.Click();
 
-            // Followers
-            IWebElement followers = driver.FindElement(By.ClassName("_m2soy"));
+            // Followers 
+            IWebElement followers = driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._de9bg > ul > li:nth-child(2) > a"));
             followers.Click();
             Thread.Sleep(1000);
 
@@ -381,7 +384,7 @@ namespace SeleniumEx
             x.Click();
 
             // Following
-            IWebElement following = driver.FindElement(By.ClassName("_c26bu"));
+            IWebElement following = driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._de9bg > ul > li:nth-child(3) > a"));
             following.Click();
             Thread.Sleep(1000);
 
@@ -391,26 +394,28 @@ namespace SeleniumEx
             Thread.Sleep(2500);
 
             // Unfollow                            
-            IWebElement follow = driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/span[2]/button"));
+            IWebElement follow = driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._de9bg > div._8mm5v > span._jxp6f._8okdy > span._phrgb._e616g > button"));
             follow.Click();
 
             Thread.Sleep(1000);
 
-            Assert.AreEqual(true, driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[1]/img")).Displayed);
+            Assert.AreEqual(true, driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._o0ohn > img")).Displayed);
 
             // Take screenshot
             Screenshot image = ((ITakesScreenshot)driver).GetScreenshot();
-            image.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/3_Instagram4.jpg", ImageFormat.Jpeg);
+            image.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/3_Instagram4.jpg", ImageFormat.Jpeg);
 
             // Follow 
             follow.Click();
 
             // Back to Profile (Need new element to avoid stale element exception)
-            IWebElement userprofile = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[3]/a"));
+            IWebElement userprofile = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div/div[2]/div[3]/a"));
             userprofile.Click();
 
+            Thread.Sleep(1500);
+
             // Following
-            following = driver.FindElement(By.ClassName("_c26bu"));
+            following = driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[2]/ul/li[3]/a"));
             following.Click();
             Thread.Sleep(1000);
 
@@ -420,30 +425,32 @@ namespace SeleniumEx
             Thread.Sleep(2500);
 
             // Unfollow                          
-            follow = driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/span[2]/button"));
+            follow = driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._de9bg > div._8mm5v > span._jxp6f._8okdy > span._phrgb._e616g > button"));
             follow.Click();
 
-            Thread.Sleep(1000); 
+            Thread.Sleep(1000);
 
-            Assert.AreEqual(true, driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[1]/img")).Displayed);
+            Assert.AreEqual(true, driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._o0ohn > img")).Displayed);
 
             // Take screenshot
             Screenshot seolscreen = ((ITakesScreenshot)driver).GetScreenshot();
-            seolscreen.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/3_Instagram5.jpg", ImageFormat.Jpeg);
+            seolscreen.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/3_Instagram5.jpg", ImageFormat.Jpeg);
 
             // Follow 
             follow.Click();
 
             // Back to Profile (Need new element to avoid stale element exception)
-            userprofile = driver.FindElement(By.XPath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[3]/a"));
+            userprofile = driver.FindElement(By.CssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(3) > a"));
             userprofile.Click();
 
+            Thread.Sleep(1500);
+
             // Three dots 
-            IWebElement threedots = driver.FindElement(By.XPath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/button"));
+            IWebElement threedots = driver.FindElement(By.CssSelector("#react-root > section > main > article > header > div._de9bg > div._8mm5v > div > button"));
             threedots.Click();
 
             // Logout
-            IWebElement logout = driver.FindElement(By.XPath("/html/body/div[2]/div/div[2]/div/div/ul[1]/li/button"));
+            IWebElement logout = driver.FindElement(By.CssSelector("body > div:nth-child(9) > div > div._g1ax7 > div > ul > li:nth-child(1) > button"));
             logout.Click();
         }
 
@@ -455,17 +462,17 @@ namespace SeleniumEx
             searchBar.Submit();
 
             // Find first link returned by Google and select
-            IWebElement linkedin = driver.FindElement(By.LinkText("LinkedIn: World's Largest Professional Network"));
+            IWebElement linkedin = driver.FindElement(By.CssSelector("#rso > div.g > div > div > h3 > a"));
             linkedin.Click();
 
             // Example Signup
-            IWebElement firstname = driver.FindElement(By.Id("first-name"));
+            IWebElement firstname = driver.FindElement(By.Id("reg-firstname"));
             firstname.SendKeys("Selenium");
-            IWebElement lastname = driver.FindElement(By.Id("last-name"));
+            IWebElement lastname = driver.FindElement(By.Id("reg-lastname"));
             lastname.SendKeys("Tester");
-            IWebElement joinemail = driver.FindElement(By.Id("join-email"));
+            IWebElement joinemail = driver.FindElement(By.Id("reg-email"));
             joinemail.SendKeys("seleniumtesterjay@gmail.com");
-            IWebElement joinpass = driver.FindElement(By.Id("join-password"));
+            IWebElement joinpass = driver.FindElement(By.Id("reg-password"));
             joinpass.SendKeys("SeleniumTester24");
 
             // Login 
@@ -473,11 +480,11 @@ namespace SeleniumEx
             email.SendKeys("seleniumtesterjay@gmail.com");
             IWebElement password = driver.FindElement(By.Id("login-password"));
             password.SendKeys("SeleniumTester24");
-            IWebElement submit = driver.FindElement(By.Name("submit"));
+            IWebElement submit = driver.FindElement(By.Id("login-submit"));
             submit.Submit();
 
             // Sleep thread
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
 
             // User Profile 
             IWebElement profiledrop = driver.FindElement(By.XPath("//*[@id='main-site-nav']/ul/li[2]/a"));
@@ -493,7 +500,7 @@ namespace SeleniumEx
 
             // Take profile screenshot
             Screenshot profile = ((ITakesScreenshot)driver).GetScreenshot();
-            profile.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/4_LinkedIn1.jpg", ImageFormat.Jpeg);
+            profile.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/4_LinkedIn1.jpg", ImageFormat.Jpeg);
 
             // Jay Profile
             IWebElement jayprofile = driver.FindElement(By.XPath("//*[@id='connection-282336451']/strong/span/strong/a"));
@@ -506,7 +513,7 @@ namespace SeleniumEx
 
             // Take screenshot
             Screenshot image = ((ITakesScreenshot)driver).GetScreenshot();
-            image.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/4_LinkedIn2.jpg", ImageFormat.Jpeg);
+            image.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/4_LinkedIn2.jpg", ImageFormat.Jpeg);
 
             // Head back home
             IWebElement home = driver.FindElement(By.XPath("//*[@id='main-site-nav']/ul/li[1]/a"));
@@ -524,7 +531,7 @@ namespace SeleniumEx
             Thread.Sleep(3000);
             // Take screenshot
             Screenshot apppro = ((ITakesScreenshot)driver).GetScreenshot();
-            apppro.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/4_LinkedIn3.jpg", ImageFormat.Jpeg);
+            apppro.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/4_LinkedIn3.jpg", ImageFormat.Jpeg);
         }
 
         [TestMethod]
@@ -535,8 +542,12 @@ namespace SeleniumEx
             searchBar.Submit();
 
             // Find first link returned by Google
-            IWebElement gmail = driver.FindElement(By.LinkText("Google Accounts: Sign in"));
+            IWebElement gmail = driver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div > h3 > a"));
             gmail.Click();
+
+            // Signin button 
+            IWebElement signin = driver.FindElement(By.CssSelector("body > nav > div > a.gmail-nav__nav-link.gmail-nav__nav-link__sign-in"));
+            signin.Click();
 
             // Log In
             IWebElement email = driver.FindElement(By.Id("Email"));
@@ -555,7 +566,7 @@ namespace SeleniumEx
             Thread.Sleep(2000);
 
             Screenshot gmail1 = ((ITakesScreenshot)driver).GetScreenshot();
-            gmail1.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_1Gmail.jpg", ImageFormat.Jpeg);
+            gmail1.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_1Gmail.jpg", ImageFormat.Jpeg);
 
             // Drive 
             IWebElement menu = driver.FindElement(By.XPath("//*[@id='gbwa']/div[1]/a"));
@@ -567,7 +578,7 @@ namespace SeleniumEx
             driver.SwitchTo().Window(driver.WindowHandles[0]).Close(); // Close gmail tab
             driver.SwitchTo().Window(driver.WindowHandles[0]); // Back to Drive tab 
             Screenshot drive1 = ((ITakesScreenshot)driver).GetScreenshot();
-            drive1.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_2Drive.jpg", ImageFormat.Jpeg);
+            drive1.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_2Drive.jpg", ImageFormat.Jpeg);
 
             Thread.Sleep(2000);
 
@@ -583,13 +594,13 @@ namespace SeleniumEx
             driver.SwitchTo().Window(driver.WindowHandles[0]); // Back to Maps tab 
             Thread.Sleep(2000);
             Screenshot maps1 = ((ITakesScreenshot)driver).GetScreenshot();
-            maps1.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_3Maps1.jpg", ImageFormat.Jpeg);
+            maps1.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_3Maps1.jpg", ImageFormat.Jpeg);
             
             // Search for LA 
             IWebElement mapsearch = driver.FindElement(By.Id("searchboxinput"));
             mapsearch.SendKeys("Los Angeles");
             mapsearch.SendKeys(Keys.Enter);
-            Thread.Sleep(5000); 
+            Thread.Sleep(3000); 
             IWebElement sidepanel = driver.FindElement(By.XPath("//*[@id='pane']/div/div[3]/button"));
             sidepanel.Click();
 
@@ -609,7 +620,7 @@ namespace SeleniumEx
 
             // Screenshot regular map
             Screenshot maps2 = ((ITakesScreenshot)driver).GetScreenshot();
-            maps2.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_3Maps2.jpg", ImageFormat.Jpeg);
+            maps2.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_3Maps2.jpg", ImageFormat.Jpeg);
             imagepanel.Click(); // Close
 
             // Open Google menu 
@@ -623,11 +634,14 @@ namespace SeleniumEx
             Thread.Sleep(1000);
             // Screenshot earth map
             Screenshot maps3 = ((ITakesScreenshot)driver).GetScreenshot();
-            maps3.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_3Maps3.jpg", ImageFormat.Jpeg);
+            maps3.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_3Maps3.jpg", ImageFormat.Jpeg);
             
             sidepanel.Click(); // Open side panel
+            Thread.Sleep(750);
             dropmenu.Click(); // Open menu 
+            Thread.Sleep(750);
             earth.Click(); // Disable earth setting 
+            Thread.Sleep(750);
             dropmenu.Click(); // Open menu again 
             Thread.Sleep(500);
             IWebElement traffic = driver.FindElement(By.XPath("//*[@id='settings']/div/div[2]/div/ul[1]/li[2]/button"));
@@ -637,15 +651,18 @@ namespace SeleniumEx
             Thread.Sleep(1000);
             // Screenshot traffic map
             Screenshot maps4 = ((ITakesScreenshot)driver).GetScreenshot();
-            maps4.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_3Maps4.jpg", ImageFormat.Jpeg);
+            maps4.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_3Maps4.jpg", ImageFormat.Jpeg);
 
             // Directions
             sidepanel.Click(); // Open side panel 
             Thread.Sleep(500);
             dropmenu.Click(); // Open menu
+            Thread.Sleep(750);
             traffic.Click(); // Disable traffic setting
-            IWebElement directions = driver.FindElement(By.XPath("//*[@id='pane']/div/div[1]/div/div[1]/button[2]"));
+            Thread.Sleep(750);
+            IWebElement directions = driver.FindElement(By.XPath("//*[@id='pane']/div/div[1]/div/div/div[1]/button[2]"));
             directions.Click();
+            Thread.Sleep(750);
             IWebElement startpoint = driver.FindElement(By.XPath("//*[@id='sb_ifc51']/input"));
             startpoint.SendKeys("San Diego");
             startpoint.SendKeys(Keys.Enter);
@@ -654,7 +671,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
             // Screenshot trip map
             Screenshot maps5 = ((ITakesScreenshot)driver).GetScreenshot();
-            maps5.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/5_3Maps5.jpg", ImageFormat.Jpeg);
+            maps5.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/5_3Maps5.jpg", ImageFormat.Jpeg);
         }
 
         [TestMethod]
@@ -665,7 +682,7 @@ namespace SeleniumEx
             searchBar.Submit();
 
             // Find first link returned by Google and select
-            IWebElement youtube = driver.FindElement(By.LinkText("YouTube"));
+            IWebElement youtube = driver.FindElement(By.CssSelector("#rso > div:nth-child(1) > div > div > h3 > a"));
             youtube.Click();
 
             // Try Catch block for Avengers screenshot
@@ -680,7 +697,7 @@ namespace SeleniumEx
 
                 // Take screenshot
                 Screenshot list = ((ITakesScreenshot)driver).GetScreenshot();
-                list.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT1_Avengers.jpg", ImageFormat.Jpeg);
+                list.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT1_Avengers.jpg", ImageFormat.Jpeg);
             }
             catch (Exception e)
             {
@@ -697,7 +714,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot ironman = ((ITakesScreenshot)driver).GetScreenshot();
-            ironman.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT2_Ironman.jpg", ImageFormat.Jpeg);
+            ironman.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT2_Ironman.jpg", ImageFormat.Jpeg);
 
             // 3. Batman Query
             IWebElement batsearch = driver.FindElement(By.Name("search_query"));
@@ -708,7 +725,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot batman = ((ITakesScreenshot)driver).GetScreenshot();
-            batman.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT3_Batman.jpg", ImageFormat.Jpeg);
+            batman.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT3_Batman.jpg", ImageFormat.Jpeg);
 
             // 4. Green Lantern Query
             IWebElement greensearch = driver.FindElement(By.Name("search_query"));
@@ -719,7 +736,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot greenlantern = ((ITakesScreenshot)driver).GetScreenshot();
-            greenlantern.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT4_GreenLantern.jpg", ImageFormat.Jpeg);
+            greenlantern.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT4_GreenLantern.jpg", ImageFormat.Jpeg);
             
             // 5. Spider-Man Query
             IWebElement spidersearch = driver.FindElement(By.Name("search_query"));
@@ -730,7 +747,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot spiderman = ((ITakesScreenshot)driver).GetScreenshot();
-            spiderman.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT5_Spiderman.jpg", ImageFormat.Jpeg);
+            spiderman.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT5_Spiderman.jpg", ImageFormat.Jpeg);
            
             // 6. Skyrim Query
             IWebElement skysearch = driver.FindElement(By.Name("search_query"));
@@ -741,7 +758,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot skyrim = ((ITakesScreenshot)driver).GetScreenshot();
-            skyrim.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT6_Skyrim.jpg", ImageFormat.Jpeg);
+            skyrim.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT6_Skyrim.jpg", ImageFormat.Jpeg);
 
             // 7. Grand Theft Auto Query
             IWebElement gtasearch = driver.FindElement(By.Name("search_query"));
@@ -752,7 +769,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot gta = ((ITakesScreenshot)driver).GetScreenshot();
-            gta.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT7_GTA.jpg", ImageFormat.Jpeg);
+            gta.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT7_GTA.jpg", ImageFormat.Jpeg);
 
             // 8. Assassin's Creed Query
             IWebElement assassinsearch = driver.FindElement(By.Name("search_query"));
@@ -763,7 +780,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot assassinscreed = ((ITakesScreenshot)driver).GetScreenshot();
-            assassinscreed.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT8_Assassin's Creed.jpg", ImageFormat.Jpeg);
+            assassinscreed.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT8_Assassin's Creed.jpg", ImageFormat.Jpeg);
            
             // 9. Dallas Cowboys
             IWebElement dallassearch = driver.FindElement(By.Name("search_query"));
@@ -774,7 +791,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot cowboys = ((ITakesScreenshot)driver).GetScreenshot();
-            cowboys.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT9_DallasCowboys.jpg", ImageFormat.Jpeg);
+            cowboys.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT9_DallasCowboys.jpg", ImageFormat.Jpeg);
            
             // 10. Los Angeles Lakers       
             IWebElement lakerssearch = driver.FindElement(By.Name("search_query"));
@@ -785,7 +802,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot lakers = ((ITakesScreenshot)driver).GetScreenshot();
-            lakers.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT10_LALakers.jpg", ImageFormat.Jpeg);
+            lakers.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT10_LALakers.jpg", ImageFormat.Jpeg);
            
             // 11. Zedd
             IWebElement zeddsearch = driver.FindElement(By.Name("search_query"));
@@ -796,7 +813,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot zedd = ((ITakesScreenshot)driver).GetScreenshot();
-            zedd.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT11_Zedd.jpg", ImageFormat.Jpeg);
+            zedd.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT11_Zedd.jpg", ImageFormat.Jpeg);
            
             // 12. Porter Robinson  
             IWebElement portersearch = driver.FindElement(By.Name("search_query"));
@@ -807,7 +824,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot porter = ((ITakesScreenshot)driver).GetScreenshot();
-            porter.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT12_Porter.jpg", ImageFormat.Jpeg);
+            porter.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT12_Porter.jpg", ImageFormat.Jpeg);
            
             // 13. Seven Lions  
             IWebElement sevensearch = driver.FindElement(By.Name("search_query"));
@@ -818,7 +835,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot sevenlions = ((ITakesScreenshot)driver).GetScreenshot();
-            sevenlions.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT13_SevenLions.jpg", ImageFormat.Jpeg);
+            sevenlions.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT13_SevenLions.jpg", ImageFormat.Jpeg);
            
             // 14. Pierce The Veil 
             IWebElement piercesearch = driver.FindElement(By.Name("search_query"));
@@ -829,7 +846,7 @@ namespace SeleniumEx
             Thread.Sleep(1000);
 
             Screenshot ptv = ((ITakesScreenshot)driver).GetScreenshot();
-            ptv.SaveAsFile("C:/Users/jceballos/Documents/Visual Studio 2013/Projects/SeleniumEx/Screenshots/Youtube/6_YT14_PTV.jpg", ImageFormat.Jpeg);
+            ptv.SaveAsFile("C:/Users/jceballos/Documents/Screenshots/Youtube/6_YT14_PTV.jpg", ImageFormat.Jpeg);
         
             // Back home 
             IWebElement homepage = driver.FindElement(By.XPath("//*[@id='logo-container']/span"));

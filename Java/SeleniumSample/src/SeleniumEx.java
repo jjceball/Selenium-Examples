@@ -79,7 +79,7 @@ public class SeleniumEx
         	searchBar.submit();
 
         	// Facebook link element
-        	WebElement facebook = driver.findElement(By.xpath("//*[@id='rso']/div[1]/div/div/h3/a[1]"));
+        	WebElement facebook = driver.findElement(By.cssSelector("#rso > div:nth-child(1) > div > div > h3 > a"));
         	facebook.click();
 
         	// Enter email field
@@ -105,7 +105,7 @@ public class SeleniumEx
 
         	driver.navigate().refresh();
 
-        	WebElement pages = driver.findElement(By.xpath("//*[@id='u_0_u']/div/div/div/ul/li[6]"));
+        	WebElement pages = driver.findElement(By.xpath("//*[@id='u_0_s']/div/div/div/ul/li[6]/a"));
         	pages.click();
 
         	Thread.sleep(1000);
@@ -117,9 +117,7 @@ public class SeleniumEx
         	// Sleep thread
         	Thread.sleep(2500);
 
-        	Assert.assertEquals(true, driver.findElement(By.xpath("//*[@id='fbPageFinchProfilePic']/a/img")).isDisplayed());
-
-        	// Take profile File
+        	// Take Nike screenshot
         	File screennike = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         	try 
         	{
@@ -148,11 +146,6 @@ public class SeleniumEx
         		System.out.println(e);
             		Assert.fail("Failed with Exception: " + e);
         	}
-        
-        	// Select dropdown menu
-        	WebElement drop = driver.findElement(By.id("userNavigationLabel"));
-        	drop.click(); // Open dropdown
-        	drop.click(); // Close dropdown
 
         	// Back home 
         	WebElement home = driver.findElement(By.xpath("//*[@id='blueBarDOMInspector']/div[1]/div/div/div/div[1]/div[1]/h1/a"));
@@ -173,6 +166,24 @@ public class SeleniumEx
         	{
 			e.printStackTrace();
 		}
+
+            // Select dropdown menu
+            WebElement drop = driver.findElement(By.id("userNavigationLabel"));
+            drop.click(); // Open dropdown
+            WebElement logout = driver.findElement(By.xpath("//*[@id='BLUE_BAR_ID_DO_NOT_USE']/div/div/div[1]/div/div/ul/li[12]/a/span/span"));
+            logout.click();
+
+            // Screenshot Facebook Homepage
+            Thread.sleep(1500);
+            File homescreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            try 
+            {
+            FileUtils.copyFile(homescreen, new File("C:/Users/jceballos/Documents/Screenshots/1_Facebook4.jpg"));
+        } 
+            catch (IOException e) 
+            {
+            e.printStackTrace();
+        }
 	}
 	
 	@Test
@@ -183,7 +194,7 @@ public class SeleniumEx
         	searchBar.submit();
 
         	// Twitter link 
-        	WebElement twitter = driver.findElement(By.linkText("Twitter"));
+        	WebElement twitter = driver.findElement(By.cssSelector("#rso > div.g > div > div > h3 > a"));
         	twitter.click();
 
         	// Login button
@@ -368,7 +379,7 @@ public class SeleniumEx
         	searchBar.submit();
 
         	// Link text
-        	WebElement linkText = driver.findElement(By.linkText("Instagram"));
+        	WebElement linkText = driver.findElement(By.cssSelector("#rso > div:nth-child(1) > div > h3 > a"));
         	linkText.click();
 
         	// ExampleSignup
@@ -383,7 +394,7 @@ public class SeleniumEx
         	Thread.sleep(1000);
 
         	// Login Button
-        	WebElement login1 = driver.findElement(By.className("_k6cv7"));
+        	WebElement login1 = driver.findElement(By.className("_fcn8k"));
         	login1.click();
 
         	// Username field
@@ -398,16 +409,16 @@ public class SeleniumEx
         	WebElement login2 = driver.findElement(By.className("_rz1lq"));
         	login2.click();
 
-        	Thread.sleep(2000);
+        	Thread.sleep(2500);
 
         	// First Like button 
         	WebElement like = driver.findElement(By.cssSelector("._ebwb5,._1tv0k"));
         	like.click();
 
         	// Explore 
-        	WebElement explore = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[1]/a"));
+        	WebElement explore = driver.findElement(By.cssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(1) > a"));
         	explore.click();
-        	Thread.sleep(5000);
+        	Thread.sleep(1500);
         	File explorescreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	 	try 
         	{
@@ -419,18 +430,18 @@ public class SeleniumEx
 		}
 
         	// Notifications 
-        	WebElement notifications = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[2]/a"));
+        	WebElement notifications = driver.findElement(By.cssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(2) > a"));
         	notifications.click(); // Open
-        	Thread.sleep(2000);
-        	notifications = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[2]/div/div/div[1]"));
+        	Thread.sleep(1000);
+        	notifications = driver.findElement(By.xpath("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(2) > div > div > div._4i862"));
         	notifications.click(); // Close
 
         	// Search for #AOA
-        	WebElement searchbar = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[1]/input"));
+        	WebElement searchbar = driver.findElement(By.cssSelector("#react-root > section > nav > div > div > div > div > div._9pxkq._icv3j > input"));
         	searchbar.sendKeys("#AOA");
         	Thread.sleep(1000);
         	searchbar.sendKeys(Keys.ENTER);
-        	Thread.sleep(3000);
+        	Thread.sleep(1500);
         	File AOA = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         	try 
         	{
@@ -442,14 +453,14 @@ public class SeleniumEx
 		}
 
         	// Profile                                     
-        	WebElement profile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[3]/a"));
+        	WebElement profile = driver.findElement(By.cssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(3) > a"));
         	profile.click();
-        	Thread.sleep(3000);
+        	Thread.sleep(1500);
 
         	// First post 
-        	WebElement firstpost = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/div/div[1]/div/a"));
+        	WebElement firstpost = driver.findElement(By.cssSelector("#react-root > section > main > article > div > div._nljxa > div > a"));
         	firstpost.click();
-        	Thread.sleep(3000);
+        	Thread.sleep(1500);
         	File post = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         	try 
         	{
@@ -463,7 +474,7 @@ public class SeleniumEx
         	closepost.click();
 
         	// Followers
-        	WebElement followers = driver.findElement(By.className("_m2soy"));
+        	WebElement followers = driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._de9bg > ul > li:nth-child(2) > a"));
         	followers.click();
         	Thread.sleep(1000);
 
@@ -472,7 +483,7 @@ public class SeleniumEx
         	x.click();
 
 	 	// Following
-        	WebElement following = driver.findElement(By.className("_c26bu"));
+        	WebElement following = driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._de9bg > ul > li:nth-child(3) > a"));
         	following.click();
         	Thread.sleep(1000);
 
@@ -482,12 +493,12 @@ public class SeleniumEx
         	Thread.sleep(2500);
 
         	// Unfollow                            
-        	WebElement follow = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/span[2]/button"));
+        	WebElement follow = driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._de9bg > div._8mm5v > span._jxp6f._8okdy > span._phrgb._e616g > button"));
         	follow.click();
 
         	Thread.sleep(1000);
 
-        	Assert.assertEquals(true, driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[1]/img")).isDisplayed());
+        	Assert.assertEquals(true, driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._o0ohn > img")).isDisplayed());
 
         	// Take File
 	        File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -504,11 +515,13 @@ public class SeleniumEx
         	follow.click();
 
         	// Back to Profile (Need new element to avoid stale element exception)
-        	WebElement userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[3]/a"));
+        	WebElement userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div/div[2]/div[3]/a"));
         	userprofile.click();
 
+            Thread.sleep(1500);
+
         	// Following
-        	following = driver.findElement(By.className("_c26bu"));
+        	following = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/ul/li[3]/a"));
         	following.click();
         	Thread.sleep(1000);
 
@@ -518,12 +531,12 @@ public class SeleniumEx
         	Thread.sleep(2500);
 
         	// Unfollow                          
-        	follow = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/span[2]/button"));
+        	follow = driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._de9bg > div._8mm5v > span._jxp6f._8okdy > span._phrgb._e616g > button"));
         	follow.click();
 
         	Thread.sleep(1000); 
 
-        	Assert.assertEquals(true, driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[1]/img")).isDisplayed());
+        	Assert.assertEquals(true, driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._o0ohn > img")).isDisplayed());
 
         	// Take File
         	File seolscreen = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -540,15 +553,15 @@ public class SeleniumEx
         	follow.click();
 
         	// Back to Profile (Need new element to avoid stale element exception)
-        	userprofile = driver.findElement(By.xpath("//*[@id='react-root']/section/nav/div/div/div/div[2]/div[3]/a"));
+        	userprofile = driver.findElement(By.cssSelector("#react-root > section > nav > div > div > div > div > div._pq5am > div:nth-child(3) > a"));
         	userprofile.click();
 
         	// Three dots 
-        	WebElement threedots = driver.findElement(By.xpath("//*[@id='react-root']/section/main/article/header/div[2]/div[1]/button"));
+        	WebElement threedots = driver.findElement(By.cssSelector("#react-root > section > main > article > header > div._de9bg > div._8mm5v > div > button"));
         	threedots.click();
 
         	// Logout
-        	WebElement logout = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div/div/ul[1]/li/button"));
+        	WebElement logout = driver.findElement(By.cssSelector("body > div:nth-child(9) > div > div._g1ax7 > div > ul > li:nth-child(1) > button"));
         	logout.click();
 	}
 	
@@ -560,17 +573,17 @@ public class SeleniumEx
         	searchBar.submit();
 
         	// Find first link returned by Google and select
-        	WebElement linkedin = driver.findElement(By.linkText("LinkedIn: World's Largest Professional Network"));
+        	WebElement linkedin = driver.findElement(By.cssSelector("#rso > div.g > div > div > h3 > a"));
         	linkedin.click();
 
         	// Example Signup
-        	WebElement firstname = driver.findElement(By.id("first-name"));
+        	WebElement firstname = driver.findElement(By.id("reg-firstname"));
         	firstname.sendKeys("Selenium");
-        	WebElement lastname = driver.findElement(By.id("last-name"));
+        	WebElement lastname = driver.findElement(By.id("reg-lastname"));
         	lastname.sendKeys("Tester");
-        	WebElement joinemail = driver.findElement(By.id("join-email"));
+        	WebElement joinemail = driver.findElement(By.id("reg-email"));
         	joinemail.sendKeys("seleniumtesterjay@gmail.com");
-        	WebElement joinpass = driver.findElement(By.id("join-password"));
+        	WebElement joinpass = driver.findElement(By.id("reg-password"));
         	joinpass.sendKeys("SeleniumTester24");
 
         	// Login 
@@ -661,8 +674,12 @@ public class SeleniumEx
         	searchBar.submit();
 
         	// Find first link returned by Google
-        	WebElement gmail = driver.findElement(By.linkText("Google Accounts: Sign in"));
+        	WebElement gmail = driver.findElement(By.cssSelector("#rso > div:nth-child(1) > div > h3 > a"));
 	 	gmail.click();
+
+            // Signin button 
+            WebElement signin = driver.findElement(By.cssSelector("body > nav > div > a.gmail-nav__nav-link.gmail-nav__nav-link__sign-in"));
+            signin.click();
 
         	// Log In
         	WebElement email = driver.findElement(By.id("Email"));
@@ -735,7 +752,7 @@ public class SeleniumEx
         	WebElement mapsearch = driver.findElement(By.id("searchboxinput"));
         	mapsearch.sendKeys("Los Angeles");
         	mapsearch.sendKeys(Keys.ENTER);
-        	Thread.sleep(5000); 
+        	Thread.sleep(3000); 
         	WebElement sidepanel = driver.findElement(By.xpath("//*[@id='pane']/div/div[3]/button"));
         	sidepanel.click();
 
@@ -786,8 +803,11 @@ public class SeleniumEx
 		}
         
         	sidepanel.click(); // Open side panel
+            Thread.sleep(750);
         	dropmenu.click(); // Open menu 
+            Thread.sleep(750);
         	earth.click(); // Disable earth setting 
+            Thread.sleep(750);
 	 	dropmenu.click(); // Open menu again 
         	Thread.sleep(500);
         	WebElement traffic = driver.findElement(By.xpath("//*[@id='settings']/div/div[2]/div/ul[1]/li[2]/button"));
@@ -810,8 +830,9 @@ public class SeleniumEx
         	sidepanel.click(); // Open side panel 
         	Thread.sleep(500);
         	dropmenu.click(); // Open menu
+            Thread.sleep(750);
         	traffic.click(); // Disable traffic setting
-	 	WebElement directions = driver.findElement(By.xpath("//*[@id='pane']/div/div[1]/div/div[1]/button[2]"));
+	 	WebElement directions = driver.findElement(By.xpath("//*[@id='pane']/div/div[1]/div/div/div[1]/button[2]"));
         	directions.click();
         	WebElement startpoint = driver.findElement(By.xpath("//*[@id='sb_ifc51']/input"));
         	startpoint.sendKeys("San Diego");
@@ -839,7 +860,7 @@ public class SeleniumEx
         	searchBar.submit();
 
         	// Find first link returned by Google and select
-        	WebElement youtube = driver.findElement(By.linkText("YouTube"));
+        	WebElement youtube = driver.findElement(By.cssSelector("#rso > div:nth-child(1) > div > div > h3 > a"));
         	youtube.click();
 
         	// Try Catch block for Avengers File
